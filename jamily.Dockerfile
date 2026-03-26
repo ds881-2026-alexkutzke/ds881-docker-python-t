@@ -1,4 +1,4 @@
-FROM python:3.12-alpine AS build
+FROM python:3.13-alpine AS build
 #imagem leve e mais recente
 WORKDIR /app
 # diretorio do container como /app
@@ -8,7 +8,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir --user -r requirements.txt 
 #instala dependencia, sem cache, reduz o tamanho da imagem e -r abrevia a dependencia (flask)
 
-FROM python:3.12-alpine
+FROM python:3.13-alpine
 
 WORKDIR /app
 
